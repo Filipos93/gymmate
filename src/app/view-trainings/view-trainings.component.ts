@@ -1,15 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-view-trainings',
-  templateUrl: './view-trainings.component.html',
-  styleUrls: ['./view-trainings.component.css']
+	selector: 'app-view-trainings',
+	templateUrl: './view-trainings.component.html',
+	styleUrls: ['./view-trainings.component.css']
 })
+	
 export class ViewTrainingsComponent implements OnInit {
 
-  constructor() { }
+	constructor(
+		private location: Location,
+	){}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
+
+	goBack(): void{
+		this.location.back();
+	}
 
 }

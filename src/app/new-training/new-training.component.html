@@ -1,3 +1,104 @@
-<p>
-  new-training works!
-</p>
+<section class="container d-flex justify-content-center">
+	<div class="col-lg-10">
+		<div class="row">
+			<button (click)="goBack()" class="btn btn-success">
+				<span class="fa fa-chevron-left mr-2"></span>Back
+			</button>
+		</div>
+		<div class="window row">
+			<div class="col-6">
+				<h1>New training</h1>
+				<h2>Add an excercise</h2>
+			</div>
+			<div class="d-flex justify-content-end col-6">
+				<a routerLink="/view-trainings" class="btn btn-success align-self-center">View trainings <span class="fa fa-list-alt"></span></a>
+			</div>
+			<div class="col-12 d-flex align-items-center mb-4">
+				<form action="">
+					<select name="" id="new-training-select">
+						<option value="" disabled selected hidden>Choose...</option>
+						<option *ngFor="let excercise of userExcercises" (click)="setNewExcercise(excercise)" value="{{excercise.name}}">{{ excercise.name }}</option>
+					</select>
+				</form>
+				<span class="mx-3">or</span>
+				<button (click)="showInput()" class="btn btn-success">Create new <span class="fa fa-plus"></span></button>
+			</div>
+
+			<div class="excercise new col-12">
+				<div class="inner">
+					<p *ngIf="!createNew && newExcercise" class="name">{{ newExcercise.name }}</p>
+					<p *ngIf="!createNew && !newExcercise" class="name">Choose new excercise...</p>
+					<div *ngIf="createNew" class="name">
+						<input type="text" placeholder="Name your new excercise">
+					</div>
+					<div class="table-wrapper">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Serie</th>
+									<th>Weight</th>
+									<th>Reps</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">{{serieId}}</th>
+									<td><input type="text" [(ngModel)]="newSerie.weight"></td>
+									<td><input type="text" [(ngModel)]="newSerie.reps"></td>
+									<td class="confirm">
+										<button class="btn btn-success" (click)="addSerie()">
+											<span class="fa fa-check"></span>
+										</button>
+									</td>
+								</tr>
+								<tr *ngFor="let serie of newExcercise.series">
+									<th scope="row">{{serie.id}}</th>
+									<td>{{serie.weight}}</td>
+									<td>{{serie.reps}}</td>
+									<td class="edit">
+										<button class="btn btn-success">
+											<span class="fa fa-pencil-square-o"></span>
+										</button>
+									</td>
+									<td class="delete">
+										<button class="btn btn-success">
+											<span class="fa fa-times"></span>
+										</button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="save-excercise">
+							<button class="btn btn-success" (click)="addExcercise()">Save <span class="fa fa-check"></span></button>
+						</div>
+					</div>
+				</div>
+			</div> <!-- /.excercise -->
+
+			<div class="excercise col-12" *ngFor="let excercise of trainingExcercises">
+				<div class="inner">
+					<p class="name">{{ excercise.name }}</p>
+					<div class="table-wrapper">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Serie</th>
+									<th>Weight</th>
+									<th>Reps</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let serie of excercise.series">
+									<th scope="row">{{ serie.id }}</th>
+									<td>{{ serie.weight }}</td>
+									<td>{{ serie.reps }}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div> <!-- /.excercise -->
+
+		</div>
+	</div>
+</section>

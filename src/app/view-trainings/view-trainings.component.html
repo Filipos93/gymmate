@@ -1,3 +1,348 @@
-<p>
-  view-trainings works!
-</p>
+<section class="container d-flex justify-content-center">
+	<div class="col-lg-10">
+		<div class="row">
+			<button (click)="goBack()" class="btn btn-success">
+				<span class="fa fa-chevron-left mr-2"></span>Back
+			</button>
+		</div>
+		<div class="window row">
+			<div class="col-6">
+				<h1>Trainings</h1>
+				<h2>View and edit your trainings</h2>
+			</div>
+			<div class="d-flex justify-content-end col-6">
+				<a routerLink="/new-training" class="btn btn-success align-self-center">Add new training <span class="fa fa-plus"></span></a>
+			</div>
+
+			<div class="training col-12">
+				<div class="training-header">
+					<div class="header-inner">
+						<p class="name">Training 3</p>
+						<p class="date">13/10/2017</p>
+					</div>
+				</div>
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Bench press</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+				
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Squats</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+				
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Push press</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+			</div> <!-- /.training -->
+
+			<div class="training col-12">
+				<div class="training-header">
+					<div class="header-inner">
+						<p class="name">Training 2</p>
+						<p class="date">13/10/2017</p>
+					</div>
+				</div>
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Bench press</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+				
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Squats</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+				
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Push press</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+			</div> <!-- /.training -->
+
+			<div class="training col-12">
+				<div class="training-header">
+					<div class="header-inner">
+						<p class="name">Training 1</p>
+						<p class="date">13/10/2017</p>
+					</div>
+				</div>
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Bench press</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+				
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Squats</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+				
+				<div class="excercise col-12">
+					<div class="inner">
+						<p class="name">Push press</p>
+						<div class="table-wrapper">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Serie</th>
+										<th>Weight</th>
+										<th>Reps</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>90kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">2</th>
+										<td>100kg</td>
+										<td>5</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>120kg</td>
+										<td>5</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div> <!-- /.excercise -->
+			</div> <!-- /.training -->
+		</div> <!-- /.window -->
+	</div>
+</section>
