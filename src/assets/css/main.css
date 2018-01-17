@@ -6851,7 +6851,7 @@ a:hover, a:active, a:focus {
   padding: 10px;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
-  background: #0081af;
+  background: red;
   color: #fff;
   border-radius: 0;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -6868,7 +6868,7 @@ a:hover, a:active, a:focus {
     top: 1px; }
   .btn.btn-success:hover {
     cursor: pointer;
-    background: #005b7c;
+    background: #cc0000;
     -webkit-box-shadow: none;
             box-shadow: none; }
 
@@ -6886,19 +6886,19 @@ a:hover, a:active, a:focus {
       -ms-flex-align: center;
           align-items: center; }
   .select2-container--classic .select2-selection--single .select2-selection__arrow {
-    background: #0081af;
+    background: red;
     border-radius: 0;
     height: 41px;
     width: 40px;
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease; }
     .select2-container--classic .select2-selection--single .select2-selection__arrow:hover {
-      background: #005b7c; }
+      background: #cc0000; }
     .select2-container--classic .select2-selection--single .select2-selection__arrow b {
       border-color: #fff transparent transparent transparent; }
 
 header {
-  background-color: #0081af;
+  background-color: red;
   margin-bottom: 40px;
   padding: 40px;
   padding-top: 40px;
@@ -6936,7 +6936,7 @@ header {
           flex-direction: column;
   position: relative;
   margin-bottom: 30px;
-  background: #0081af;
+  background: red;
   color: #fff;
   height: 120px;
   -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
@@ -6945,8 +6945,8 @@ header {
   transition: all 300ms ease; }
   .tile:hover {
     cursor: pointer;
-    background: #005b7c;
-    color: #0081af;
+    background: #cc0000;
+    color: red;
     -webkit-box-shadow: none;
             box-shadow: none; }
   .tile:active {
@@ -6975,7 +6975,7 @@ header {
       max-height: 999px; }
     .window .excercise:not(.new) .inner .name:hover {
       cursor: pointer;
-      background: #0094c9; }
+      background: #ff1a1a; }
     .window .excercise .inner {
       border: 1px solid #e9ecef;
       border-radius: 7px 7px 0 0;
@@ -6983,7 +6983,7 @@ header {
       .window .excercise .inner .name {
         -webkit-transition: all 300ms ease;
         transition: all 300ms ease;
-        background: #0081af;
+        background: red;
         color: #fff;
         padding: 10px;
         font-weight: 700;
@@ -6997,7 +6997,8 @@ header {
           font-weight: 400; }
       .window .excercise .inner .table-wrapper {
         -webkit-transition: all 300ms ease;
-        transition: all 300ms ease; }
+        transition: all 300ms ease;
+        max-height: 0; }
         .window .excercise .inner .table-wrapper .table {
           margin-bottom: 0; }
           .window .excercise .inner .table-wrapper .table tr {
@@ -7052,11 +7053,11 @@ header {
     .training .training-header:hover {
       cursor: pointer; }
       .training .training-header:hover .header-inner {
-        background: #0094c9; }
+        background: #ff1a1a; }
     .training .training-header .header-inner {
       -webkit-transition: all 300ms ease;
       transition: all 300ms ease;
-      background: #0081af;
+      background: red;
       color: #fff;
       padding: 10px;
       font-weight: 700;
