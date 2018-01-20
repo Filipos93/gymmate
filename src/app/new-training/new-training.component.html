@@ -5,12 +5,12 @@
 			<button (click)="goBack()" class="btn btn-success">
 				<span class="fa fa-chevron-left mr-2"></span>Back
 			</button>
+			<h1 class="subpage-title">New training</h1>
 		</div>
 		<div class="window row">
 			<div class="col-6">
-				<h1>New training</h1>
 				<div class="training-data">
-					<p>Training 1 on 20.01.2018</p>
+					<p>Training 1 on</p> <app-date-picker></app-date-picker>
 				</div>
 				<h2>Add an excercise</h2>
 			</div>
@@ -28,6 +28,7 @@
 				</form>
 				<span class="mx-3">or</span>
 				<button (click)="showInput()" class="btn btn-success">Create new <span class="fa fa-plus"></span></button>
+				<button (click)="saveTraining()" class="btn btn-success green ml-5">Save training<span class="fa fa-check"></span></button>
 			</div>
 
 			<div class="excercise new col-12">
@@ -75,7 +76,7 @@
 							</tbody>
 						</table>
 						<div class="save-excercise">
-							<button class="btn btn-success" (click)="addExcercise()">Save <span class="fa fa-check"></span></button>
+							<button class="btn btn-success green" (click)="addExcercise()">Add <span class="fa fa-check"></span></button>
 						</div>
 					</div>
 				</div>

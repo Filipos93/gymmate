@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
@@ -16,6 +19,7 @@ import { NewMeasurmentComponent } from './new-measurment/new-measurment.componen
 import { MainMenuComponent } from './main-menu/main-menu.component';
 
 import { OnlyNumberDirective } from './directives/only-number.directive';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
 
@@ -27,16 +31,21 @@ import { OnlyNumberDirective } from './directives/only-number.directive';
 		ViewTrainingsComponent,
 		NewMeasurmentComponent,
 		MainMenuComponent,
-		OnlyNumberDirective
+		OnlyNumberDirective,
+		DatePickerComponent
 	],
 	imports: [
 		BrowserModule,
 		RouterModule,
 		AppRoutingModule,
 		FormsModule,
+		ReactiveFormsModule,
 		BrowserAnimationsModule,
 		SimpleNotificationsModule.forRoot(),
-		MatDatepickerModule
+		MatDatepickerModule,
+		MatFormFieldModule,
+		MatNativeDateModule,
+		MatInputModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

@@ -13,6 +13,12 @@ a{
 	}
 }
 
+.subpage-title{
+	font-weight: 700;
+	margin-left: 20px;
+	margin-bottom: 0;
+}
+
 .btn.btn-success{
 	padding: 10px;
 	transition: all 300ms ease;
@@ -41,33 +47,10 @@ a{
 		background: darken($primary-color, 10%);
 		box-shadow: none;
 	}
-}
 
-.select2-container{
-	width: 250px;
-}
-
-.select2-container--classic .select2-selection--single{
-	background: white;
-	border-radius: 0;
-	height: 42px;
-	display: flex;
-	align-items: center;
-
-	.select2-selection__arrow{
-		background: $primary-color;
-		border-radius: 0;
-		height: 41px;
-		width: 40px;
-		transition: all 300ms ease;
-
-		&:hover{
-			background: darken($primary-color, 10%);
-		}
-
-		b{
-			border-color: #fff transparent transparent transparent;
-		}
+	&.green{
+		font-weight: 700;
+		background: $green;
 	}
 }
 
@@ -137,11 +120,6 @@ header{
 	border-radius: 3px;
 	padding: 30px;
 	margin-top: 30px;
-
-	h1{
-		font-weight: 700;
-		margin-bottom: 10px;
-	}
 
 	h2{
 		font-size: 18px;
@@ -236,10 +214,8 @@ header{
 					padding: 7px;
 					border-top: 1px solid #e9ecef;
 
-					.btn.btn-success{
-						font-weight: 700;
+					.btn{
 						width: 100%;
-						background: #03aa34;
 					}
 				}
 			}
@@ -319,5 +295,22 @@ header{
 				margin-bottom: 0;
 			}
 		}
+	}
+}
+
+.training-data{
+	display: flex;
+	align-items: center;
+	background: #f3f0f0;
+	padding: 4px 10px;
+	border: 1px solid #ededed;
+	border-radius: 3px;
+	margin-bottom: 20px;
+
+	p{
+		margin-bottom: 0;
+		margin-right: 20px;
+		font-size: 21px;
+		font-weight: 700;
 	}
 }

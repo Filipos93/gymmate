@@ -93,9 +93,10 @@ export class NewTrainingComponent implements OnInit {
 			this.serieId++;
 			this.newSerie.weight = null;
 			this.newSerie.reps = null;
+			this.notify.success('Serie added!', '', {});
 		}
 		else{
-			this.notify.error('Error', 'Weight and reps cannot be 0!'{});
+			this.notify.error('Error', 'Weight and reps cannot be 0!', {});
 		}
 	}
 
@@ -111,12 +112,16 @@ export class NewTrainingComponent implements OnInit {
 			this.newExcercise.id++;
 			this.newSerie.weight = null;
 			this.newSerie.reps = null;
-			this.notify.success('Excercise added!', ''{});
+			this.notify.success('Excercise added!', '', {});
 		}
 		else{
-			this.notify.error('Error', 'First add some series.'{});
+			this.notify.error('Error', 'First add some series.', {});
 		}
 
+	}
+
+	saveTraining(){
+		console.log('save training');
 	}
 
 	showInput(){
