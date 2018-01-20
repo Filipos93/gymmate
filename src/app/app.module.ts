@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
@@ -13,6 +14,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { ViewTrainingsComponent } from './view-trainings/view-trainings.component';
 import { NewMeasurmentComponent } from './new-measurment/new-measurment.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+
 import { OnlyNumberDirective } from './directives/only-number.directive';
 
 
@@ -33,7 +35,8 @@ import { OnlyNumberDirective } from './directives/only-number.directive';
 		AppRoutingModule,
 		FormsModule,
 		BrowserAnimationsModule,
-		SimpleNotificationsModule.forRoot() 
+		SimpleNotificationsModule.forRoot(),
+		MatDatepickerModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
