@@ -19,12 +19,8 @@ export class ViewTrainingsComponent implements OnInit {
 	){}
 
 	ngOnInit() {
-		this.getTrainings();
+		this.trainings = this.trainingService.get();
 		console.log(this.trainings);
-	}
-
-	getTrainings(): void {
-		this.trainingService.get().then(trainings => this.trainings = trainings);
 	}
 
 	goBack(): void{

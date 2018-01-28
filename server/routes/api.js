@@ -13,6 +13,7 @@ router.get('/trainings', (req, res) => {
 		if (err) throw err;
 
 		// object of all the trainings
+		res.status(200).send(trainings);
 		console.log(trainings);
 	});
 });

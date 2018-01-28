@@ -11,11 +11,11 @@ export class TrainingService {
 	private trainingsUrl = 'http://localhost:3000/api/trainings';  // URL to web api
 
 	constructor(private http: Http) { }
-	 
+
 	get(): Promise<Training[]> {
 		return this.http.get(this.trainingsUrl)
 		.toPromise()
-		.then(response => response.json().data as Training[])
+		.then(response => return response.json() as Training[]);
 		// .catch( error => this.handleError(error));
 	}
 
