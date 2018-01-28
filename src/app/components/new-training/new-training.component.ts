@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Excercise } from './../classes/excercise';
-import { Serie } from './../classes/serie';
-import { Training } from './../classes/training';
+import { Excercise } from './../../classes/excercise';
+import { Serie } from './../../classes/serie';
+import { Training } from './../../classes/training';
 import { Location } from '@angular/common';
 import { NotificationsService } from 'angular2-notifications';
-import { TrainingService } from './../training.service';
+import { TrainingService } from './../../services/training/training.service';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 

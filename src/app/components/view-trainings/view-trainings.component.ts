@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { TrainingService } from './../training.service';
-import { Training } from './../classes/training';
+import { TrainingService } from './../../services/training/training.service';
+import { Training } from './../../classes/training';
 
 @Component({
 	selector: 'app-view-trainings',

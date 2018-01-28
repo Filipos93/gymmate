@@ -13,16 +13,16 @@ import { MatInputModule } from '@angular/material';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { AppComponent } from './app.component';
-import { NewTrainingComponent } from './new-training/new-training.component';
-import { ChartsComponent } from './charts/charts.component';
-import { ViewTrainingsComponent } from './view-trainings/view-trainings.component';
-import { NewMeasurmentComponent } from './new-measurment/new-measurment.component';
-import { MainMenuComponent } from './main-menu/main-menu.component';
-import { DatePickerComponent } from './date-picker/date-picker.component';
+import { NewTrainingComponent } from './components/new-training/new-training.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import { ViewTrainingsComponent } from './components/view-trainings/view-trainings.component';
+import { NewMeasurmentComponent } from './components/new-measurment/new-measurment.component';
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
 
-import { TrainingService } from './training.service';
+import { TrainingService } from './services/training/training.service';
 
-import { OnlyNumberDirective } from './directives/only-number.directive';
+import { OnlyNumberDirective } from './directives/only-number/only-number.directive';
 
 
 
