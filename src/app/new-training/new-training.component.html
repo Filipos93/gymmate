@@ -8,13 +8,14 @@
 			<h1 class="subpage-title">New training</h1>
 		</div>
 		<div class="window row">
-			<div class="col-6">
+			<div class="col-8">
 				<div class="training-data">
-					<p>Training 1 on</p> <app-date-picker></app-date-picker>
+					<input type="text" placeholder="Training name" [(ngModel)]="trainingName">
+					<p>on</p> <app-date-picker (messageEvent)="receiveDate($event)"></app-date-picker>
 				</div>
 				<h2>Add an excercise</h2>
 			</div>
-			<div class="d-flex justify-content-end col-6">
+			<div class="d-flex justify-content-end col-4">
 				<a routerLink="/view-trainings" class="btn btn-success align-self-center">
 					View trainings <span class="fa fa-list-alt"></span>
 				</a>
@@ -33,8 +34,8 @@
 
 			<div class="excercise new col-12">
 				<div class="inner">
-					<p *ngIf="!createNew && newExcercise" class="name">{{ newExcercise.name }}</p>
-					<p *ngIf="!createNew && !newExcercise" class="name">Choose new excercise...</p>
+					<p *ngIf="!newExcercise.name && !createNew" class="name">Choose new excercise...</p>
+					<p *ngIf="!createNew && newExcercise.name" class="name">{{ newExcercise.name }}</p>
 					<div *ngIf="createNew" class="name">
 						<input type="text" [(ngModel)]="newExcercise.name" placeholder="Name your new excercise">
 					</div>
@@ -50,8 +51,8 @@
 							<tbody>
 								<tr>
 									<th scope="row">{{serieId}}</th>
-									<td><input OnlyNumber="true" type="number" [(ngModel)]="newSerie.weight"></td>
-									<td><input OnlyNumber="true" type="number" [(ngModel)]="newSerie.reps"></td>
+									<td><input OnlyNumber="true" type="number" min="1" [(ngModel)]="newSerie.weight"></td>
+									<td><input OnlyNumber="true" type="number" min="1" [(ngModel)]="newSerie.reps"></td>
 									<td class="confirm">
 										<button class="btn btn-success" (click)="addSerie()">
 											<span class="fa fa-check"></span>

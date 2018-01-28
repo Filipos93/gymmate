@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpModule }    from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,9 +18,11 @@ import { ChartsComponent } from './charts/charts.component';
 import { ViewTrainingsComponent } from './view-trainings/view-trainings.component';
 import { NewMeasurmentComponent } from './new-measurment/new-measurment.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
+
+import { TrainingService } from './training.service';
 
 import { OnlyNumberDirective } from './directives/only-number.directive';
-import { DatePickerComponent } from './date-picker/date-picker.component';
 
 
 
@@ -37,6 +40,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 	imports: [
 		BrowserModule,
 		RouterModule,
+		HttpModule,
 		AppRoutingModule,
 		FormsModule,
 		ReactiveFormsModule,
@@ -47,7 +51,7 @@ import { DatePickerComponent } from './date-picker/date-picker.component';
 		MatNativeDateModule,
 		MatInputModule
 	],
-	providers: [],
+	providers: [TrainingService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

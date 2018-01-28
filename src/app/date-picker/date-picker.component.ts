@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 /** @title Basic datepicker */
@@ -8,4 +8,10 @@ import {FormControl} from '@angular/forms';
 })
 export class DatePickerComponent {
 	date = new FormControl(new Date());
+
+	@Output() messageEvent = new EventEmitter<FormControl>();
+
+	sendDate($event) {
+		this.messageEvent.emit($event.value);
+	}
 }

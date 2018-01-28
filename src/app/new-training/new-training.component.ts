@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Excercise } from './../classes/excercise';
 import { Serie } from './../classes/serie';
+import { Training } from './../classes/training';
 import { Location } from '@angular/common';
 import { NotificationsService } from 'angular2-notifications';
+import { TrainingService } from './../training.service';
+import { Router } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
@@ -23,33 +27,10 @@ export class NewTrainingComponent implements OnInit {
 		{name: 'Dead Lift'}
 	];
 
-	trainingExcercises: Excercise[] = [
-		{
-			id: 0,
-			name: 'Squats',
-			series: [
-				{
-					id: 1,
-					weight: 60,
-					reps: 5
-				},
-				{
-					id: 2,
-					weight: 60,
-					reps: 5
-				},
-				{
-					id: 3,
-					weight: 60,
-					reps: 5
-				}
-			]
-		}
-	];
+	trainingExcercises : Excercise[] = [];
 
 	newExcercise: Excercise = {
-		id: 0,
-		name: 'Choose excercise...',
+		name: null,
 		series: []
 	};
 
@@ -62,6 +43,11 @@ export class NewTrainingComponent implements OnInit {
 	serieId = 1;
 	createNew = false;
 
+	weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+	trainingDate: Date = new Date();
+	trainingName = `${this.weekDays[this.trainingDate.getDay()]} Training`;
+	
+
 	public NotificationOptions = {
 		timeOut: 1000,
 		showProgressBar: false,
@@ -72,6 +58,8 @@ export class NewTrainingComponent implements OnInit {
 	constructor(
 		private location: Location,
 		private notify: NotificationsService,
+		private trainingService: TrainingService,
+		private router: Router
 	){}
 
 	ngOnInit() {
@@ -81,6 +69,12 @@ export class NewTrainingComponent implements OnInit {
 	setNewExcercise(arg){
 		this.newExcercise.name = arg.name;
 		this.createNew = false;
+	}
+
+	// receive training Date on date-picker input change
+	receiveDate($event) {
+		this.trainingDate = $event
+		console.log(this.trainingDate.getDay());
 	}
 
 	addSerie(){
@@ -101,31 +95,56 @@ export class NewTrainingComponent implements OnInit {
 	}
 
 	addExcercise(){
-		if(this.newExcercise.series.length>0){
-			this.trainingExcercises.push({
-				id: this.newExcercise.id,
-				name: this.newExcercise.name,
-				series: this.newExcercise.series
-			});
-			this.newExcercise.series = [];
-			this.newExcercise.name = 'Choose excercise...',
-			this.newExcercise.id++;
-			this.newSerie.weight = null;
-			this.newSerie.reps = null;
-			this.notify.success('Excercise added!', '', {});
-		}
-		else{
-			this.notify.error('Error', 'First add some series.', {});
+		
+		if(this.newExcercise.series.length==0){
+			return this.notify.error('Error', 'First add some series.', {});
 		}
 
+		if(!this.newExcercise.name){
+			return this.notify.error('Error', 'Choose an excercise name!', {});
+		}
+
+		this.trainingExcercises.push({
+			name: this.newExcercise.name,
+			series: this.newExcercise.series
+		});
+
+		this.clearExcercise();
+		this.notify.success('Excercise added!', '', {});
 	}
 
 	saveTraining(){
-		console.log('save training');
+		if(this.trainingExcercises.length>0){
+
+			this.trainingService.create({
+				name: this.trainingName,
+				excercises: this.trainingExcercises,
+				date: this.trainingDate
+			});
+			this.router.navigateByUrl('/view-trainings');
+		}
+		else{
+			this.notify.error('Error', 'First add some excercises.', {});
+		}
+		console.log('save');
+		
+	}
+
+	clearExcercise(){
+		this.newExcercise.series = [];
+		this.newExcercise.name = null,
+		this.newSerie.weight = null;
+		this.newSerie.reps = null;
+	}
+
+	clearTraining(){
+		this.clearExcercise();
+		this.trainingExcercises = [];
 	}
 
 	showInput(){
 		this.createNew = true;
+		this.newExcercise.name = null;
 	}
 
 	goBack(): void{
