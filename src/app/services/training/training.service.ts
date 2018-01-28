@@ -3,7 +3,7 @@ import { Headers, Http, Response }    from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
-import { Training } from './classes/training';
+import { Training } from './../../classes/training';
 
 @Injectable()
 export class TrainingService {
@@ -12,11 +12,8 @@ export class TrainingService {
 
 	constructor(private http: Http) { }
 
-	get(): Promise<Training[]> {
-		return this.http.get(this.trainingsUrl)
-		.toPromise()
-		.then(response => return response.json() as Training[]);
-		// .catch( error => this.handleError(error));
+	get(){
+		return this.http.get(this.trainingsUrl).map(res => res.json());
 	}
 
 	create(training){

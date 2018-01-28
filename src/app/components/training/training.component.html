@@ -1,0 +1,11 @@
+<div class="training" [ngClass]="{unfolded: show}">
+	<div class="training-header" (click)="toggle()">
+		<div class="header-inner">
+			<p class="name">{{training.name}}</p>
+			<p class="date">{{training.date}}</p>
+		</div>
+	</div>
+	<div class="col-12" *ngFor="let excercise of training.excercises">
+		<app-excercise [excercise]="excercise"></app-excercise>
+	</div>
+</div> <!-- /.training -->

@@ -1,0 +1,23 @@
+<div class="excercise" [ngClass]="{unfolded: show}">
+	<div class="inner" (click)="toggle()">
+		<p class="name">{{excercise.name}}</p>
+		<div class="table-wrapper">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Serie</th>
+						<th>Weight</th>
+						<th>Reps</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let serie of excercise.series">
+						<th scope="row">{{serie.id}}</th>
+						<td>{{serie.weight}}</td>
+						<td>{{serie.reps}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div> <!-- /.excercise -->
